@@ -13,10 +13,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Download Plugin
+        run: wget "https://github.com/mahaloz/binsync-ghidra-plugin/releases/latest/download/binsync-ghidra-plugin.zip"
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          # bodyFile: "body.md"
           generateReleaseNotes: true
-
-
+          artifacts: "binsync-ghidra-plugin.zip"
